@@ -263,6 +263,19 @@ const animationTimeline = () => {
         },
         "+=1"
     );
+    function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * window.innerWidth + "px";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 3000);
+}
+
+setInterval(createHeart, 500);
 
     // Restart Animation on click
     const replyBtn = document.getElementById("replay");
@@ -270,3 +283,4 @@ const animationTimeline = () => {
         tl.restart();
     });
 }
+
